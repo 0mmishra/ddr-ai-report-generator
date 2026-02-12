@@ -10,7 +10,7 @@ import streamlit as st
 
 
 # Backend URL from environment variable (used in deployment)
-DEFAULT_BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+DEFAULT_BACKEND_URL = os.getenv("BACKEND_URL", "https://ddr-ai-report-generator.onrender.com")
 
 
 # ===========================
