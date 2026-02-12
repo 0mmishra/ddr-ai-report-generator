@@ -39,7 +39,11 @@ def _render_report(report: Dict[str, Any]) -> None:
     st.json(report.get("Severity_Assessment", {}))
 
     st.subheader("Recommended Actions")
-    st.json(report.get("Recommended_Actions", "Not Available"))
+    recommended_actions = report.get("Recommended_Actions", "Not Available")
+    if isinstance(recommended_actions, (dict, list)):
+        st.json(recommended_actions)
+    else:
+        st.markdown(str(recommended_actions))
 
     st.subheader("Risk Implications")
     st.write(report.get("Risk_Implications", "Not Available"))
